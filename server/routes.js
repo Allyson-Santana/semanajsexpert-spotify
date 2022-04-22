@@ -40,20 +40,18 @@ async function routes(request, response) {
         const contentType = CONTENT_TYPE[type];
         if(contentType) {
             response.writeHead(200, {
-                'Content-type': CONTENT_TYPE[type]
+                'Content-Type': CONTENT_TYPE[type]
             });
         }      
         return stream.pipe(response);
     }
-
-
 
     response.writeHead(404);
     return response.end();
 }
 
 function handlerError(error, response) {
-    if(error.message.includes('ENODENT')) {
+    if(error.message.includes('ENOENT')) {
         response.writeHead(404);
         return response.end();
     }

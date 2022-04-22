@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "LOG_DISABLED=true NODE_OPTIONS=--experimental-vm-modules jest --no-chache",
+    "test:watch": "LOG_DISABLED=true NODE_OPTIONS=--experimental-vm-modules jest --no-chache --watchAll",
+    "test:coverage": "LOG_DISABLED=true NODE_OPTIONS=--experimental-vm-modules jest --no-chache --coverage tests/unit"
   },
   "engines": {
     "node": "16"
@@ -24,6 +26,7 @@
   },
   "homepage": "https://github.com/Allyson-Santana/semanajsexpert-spotify#readme",
   "devDependencies": {
+    "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
