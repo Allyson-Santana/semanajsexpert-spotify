@@ -40,7 +40,7 @@ describe("#Routes - test site for api response", () => {
         params.request.method = 'GET';
         params.request.url = '/home';
         
-        const mockFileStream = TestUtil.generateReadableStrem(['data']);
+        const mockFileStream = TestUtil.generateReadableStream(['data']);
         jest.spyOn(
             Controller.prototype,
             Controller.prototype.getFileStream.name,
@@ -65,7 +65,7 @@ describe("#Routes - test site for api response", () => {
         params.request.method = 'GET';
         params.request.url = '/controller';
         
-        const mockFileStream = TestUtil.generateReadableStrem(['data']);
+        const mockFileStream = TestUtil.generateReadableStream(['data']);
         jest.spyOn(
             Controller.prototype,
             Controller.prototype.getFileStream.name,
@@ -85,7 +85,6 @@ describe("#Routes - test site for api response", () => {
         expect(mockFileStream.pipe).toHaveBeenCalledWith(params.response);
     });
 
-
     test(`GET /index.html - should response with file stream`, async () => {
         const params =  TestUtil.defaultHandleParams();
         const filename = '/index.html';
@@ -93,7 +92,7 @@ describe("#Routes - test site for api response", () => {
         params.request.url = filename;
         
         const expectContentType = '.html';
-        const mockFileStream = TestUtil.generateReadableStrem(['data']);
+        const mockFileStream = TestUtil.generateReadableStream(['data']);
         jest.spyOn(
             Controller.prototype,
             Controller.prototype.getFileStream.name,
@@ -126,7 +125,7 @@ describe("#Routes - test site for api response", () => {
         params.request.url = filename;
         
         const expectContentType = '.ext';
-        const mockFileStream = TestUtil.generateReadableStrem(['data']);
+        const mockFileStream = TestUtil.generateReadableStream(['data']);
         jest.spyOn(
             Controller.prototype,
             Controller.prototype.getFileStream.name,
@@ -191,6 +190,7 @@ describe("#Routes - test site for api response", () => {
             expect(params.response.writeHead).toHaveBeenCalledWith(500);
             expect(params.response.end).toHaveBeenCalled();
         });
+
     });
 
-})
+});

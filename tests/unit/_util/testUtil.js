@@ -1,9 +1,10 @@
+/* istanbul ignore file */
 import { jest } from '@jest/globals';
 import { Readable, Writable } from 'stream';
 
 export default class TestUtil {
-
-    static generateReadableStrem(data) {
+    
+    static generateReadableStream(data) {
         return new Readable({
             read() {
                 for (const item of data) {
@@ -15,7 +16,7 @@ export default class TestUtil {
         })
     }
 
-    static generateWritableStrem(onData) {
+    static generateWritableStream(onData) {
         return new Writable({
             write(chunk, enc, cb) {
                 onData(chunk);
@@ -26,8 +27,8 @@ export default class TestUtil {
     }
    
     static defaultHandleParams() {
-        const requestStream = TestUtil.generateReadableStrem(['body request']);
-        const responseStream = TestUtil.generateWritableStrem(() => {});
+        const requestStream = TestUtil.generateReadableStream(['body request']);
+        const responseStream = TestUtil.generateWritableStream(() => {});
         const data = {
             request: Object.assign(requestStream,  {
                 headers: {},
