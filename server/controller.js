@@ -1,4 +1,5 @@
 import { Service } from "./service.js";
+import { logger } from './util.js';
 
 export class Controller {
     
@@ -11,6 +12,38 @@ export class Controller {
     }
 
     
+    createClientStream() {
+        const { id, clientStream } = this.service.createClientStream();
+
+        const onClose = () => {
+            logger.info(`closing connection of ${id}`);
+            this.service.removeClientStream(id);
+        }
+
+        return { stream: clientStream, onClose };
+    }
 
 
+    async handleCommand({ command }) {
+        logger.info(`Command received: ${command}`);
+        
+        const result = {
+            result: "OK"
+        }
+        const cmd = command.toLowerCase();
+
+        if(cmd.includes('start')) {
+            this.service.startStreamming();
+            return result;
+        }
+
+        if(cmd.includes('stop')) {
+            this.service.stopStreamming();
+            return result;
+        }
+
+        return this.service.startStreamming();
+    }
+
+ 
 }

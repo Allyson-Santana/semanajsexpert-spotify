@@ -12,17 +12,17 @@ Marque esse projeto com uma estrela 🌟
 
 - Web API
     - [ ] Deve atingir 100% de cobertura de código em testes
-    - [ ] Deve ter testes de integração validando todas as rotas da API
+    - [x] Deve ter testes de integração validando todas as rotas da API
     - [x] Deve entregar arquivos estáticos como Node.js Stream
-    - [ ] Deve entregar arquivos de música como Node.js Stream
-    - [ ] Dado um usuário desconectado, não deve quebrar a API
+    - [x] Deve entregar arquivos de música como Node.js Stream
+    - [x] Dado um usuário desconectado, não deve quebrar a API
     - [ ] Mesmo que vários comandos sejam desparados ao mesmo tempo, não deve quebrar a API
     - [x] Caso aconteça um erro inesperado, a API deve continuar funcionando
-    - [ ] O projeto precisa ser executado em ambientes Linux, Mac e Windows
+    - [x] O projeto precisa ser executado em ambientes Linux, Mac e Windows
 
 - Web App 
     - Client
-        - [ ] Deve reproduzir a transmissão
+        - [x] Deve reproduzir a transmissão
         - [ ] Não deve pausar se algum efeito for adicionado
     - Controller
         - [ ] Deve atingir 100% de cobertura de código em testes
@@ -63,3 +63,6 @@ Marque esse projeto com uma estrela 🌟
 
 - Rodei `npm test` mas nada acontece, o que fazer?
     - Verifique a versão do seu Node.js. Estamos usando na versão 17. Entre no [site do node.js](https://nodejs.org) e baixe a versão mais recente.
+
+
+Github do orquestrador: https://github.com/ErickWendel/semana-javascript-expert06
