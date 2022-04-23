@@ -39,7 +39,7 @@ async function routes(request, response) {
         request.once("close", onClose);
         response.writeHead(200, {
             'Content-Type': 'audio/mpeg',
-            'Accept-Rages': 'bytes'
+            'Accept-Ranges': 'bytes'
         });
         return stream.pipe(response)
     }
@@ -47,7 +47,7 @@ async function routes(request, response) {
     if(method === 'POST' && url === '/controller') {
         const data = await once(request, 'data');
         const item = JSON.parse(data);
-        const result = controller.handleCommand(item);
+        const result = await controller.handleCommand(item);
         return response.end(JSON.stringify(result));
     }
 
