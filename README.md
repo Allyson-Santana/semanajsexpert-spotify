@@ -1,6 +1,6 @@
 # Spotify Radio - Semana JS Expert 6.0
 
-Seja bem vindo(a) à sexta Semana Javascript Expert. Este é o código inicial para iniciar nossa jornada.
+Seja bem vindo(a) à sexta Semana Javascript Expert.
 
 Marque esse projeto com uma estrela 🌟
 
@@ -26,8 +26,8 @@ Marque esse projeto com uma estrela 🌟
         - [ ] Não deve pausar se algum efeito for adicionado
     - Controller
         - [ ] Deve atingir 100% de cobertura de código em testes
-        - [ ] Deve poder iniciar ou parar uma transmissão 
-        - [ ] Deve enviar comandos para adicionar audio efeitos à uma transmissão
+        - [x] Deve poder iniciar ou parar uma transmissão 
+        - [x] Deve enviar comandos para adicionar audio efeitos à uma transmissão
 
 ## Tarefas por aula
 

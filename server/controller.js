@@ -42,7 +42,7 @@ export class Controller {
             return result;
         }
 
-        return this.service.startStreamming();
+        return result;
     }
 
  

@@ -86,7 +86,7 @@ describe('API E2E Suite Test', () => {
           const file = 'file.js'
           const response = await testServer.get(`/${file}`)
           expect(response.statusCode).toStrictEqual(404)
-        })
+        });
     
         test('GET /controller/css/index.css - given a css file it should respond with content-type text/css ', async () => {
           const file = 'controller/css/index.css'
@@ -95,7 +95,7 @@ describe('API E2E Suite Test', () => {
           expect(response.text).toStrictEqual(existingPage.toString())
           expect(response.statusCode).toStrictEqual(200)
           expect(response.header['content-type']).toStrictEqual('text/css')
-        })
+        });
     
         test('GET /home/js/animation.js - given a js file it should respond with content-type text/javascript ', async () => {
           const file = 'home/js/animation.js'
@@ -104,7 +104,7 @@ describe('API E2E Suite Test', () => {
           expect(response.text).toStrictEqual(existingPage.toString())
           expect(response.statusCode).toStrictEqual(200)
           expect(response.header['content-type']).toStrictEqual('text/javascript')
-        })
+        });
     
         test('GET /controller/index.html - given a html file it should respond with content-type text/html ', async () => {
           const file = controllerHTML
@@ -113,7 +113,7 @@ describe('API E2E Suite Test', () => {
           expect(response.text).toStrictEqual(existingPage.toString())
           expect(response.statusCode).toStrictEqual(200)
           expect(response.header['content-type']).toStrictEqual('text/html')
-        })
+        });
 
     });
 
