@@ -1,0 +1,21 @@
+heroku.wml
+
+    npm i -g heroku
+    heroku login
+
+git init 
+    npx gitignore node
+
+git add . && git commit -m "My Frist Deploy"
+
+heroku apps:create spotify-radio-AllysonSantana
+git remote -v
+heroku stack:set container
+git push heroku master
+
+heroku open
+heroku logs -t -a spotify-radio-AllysonSantana
+
+
+heroku apps:delete spotify-radio-AllysonSantana
+rm -rf .git
